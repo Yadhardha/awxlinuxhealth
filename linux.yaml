@@ -1,17 +1,12 @@
 - name: Linux Health
   hosts: localhost
-  gather_facts: yes
-
+  gather_facts: no
 
   tasks:
-  - name: check disk usage
-    command: df -h
-    register: disk 
-  - name: check uptime 
-    command: uptime 
-    register: uptime_info
-  - name: display disk usage
+  - name: display IP address
+    command: hostname -I 
+    register: ip
+  - name: Display ip
     debug:
-      var: disk.stdout
-  - name: display 
+      var: ip.stdout
     
