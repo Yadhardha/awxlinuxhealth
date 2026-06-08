@@ -1,0 +1,15 @@
+- name: Linux Health
+  hosts: no
+  gather_facts: yes
+
+
+  tasks:
+  - name: check disk usage
+    command: df -h
+    register: disk 
+  - name: check memory usage 
+    command: free -h 
+    register: memory
+  - name: check uptime 
+    command: uptime 
+    register: uptime
