@@ -13,3 +13,14 @@
   - name: check uptime 
     command: uptime 
     register: uptime
+
+  - name: display disk usage
+    debug:
+      var: disk.stdout
+  - name: display memory usage
+    debug:
+      var: memory.stdout
+  - name: display uptime
+    debug:
+      var: uptime.stdout
+      
