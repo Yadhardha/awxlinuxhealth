@@ -9,11 +9,9 @@
     register: disk 
   - name: check uptime 
     command: uptime 
-    register: uptime
-
+    register: uptime_info
   - name: display disk usage
     debug:
       var: disk.stdout
-  - name: display uptime
-    debug:
-      var: uptime.stdout
+  - name: display 
+    
