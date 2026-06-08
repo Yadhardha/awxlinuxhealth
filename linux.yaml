@@ -1,5 +1,5 @@
 - name: Linux Health
-  hosts: all
+  hosts: localhost
   gather_facts: yes
 
 
@@ -7,9 +7,6 @@
   - name: check disk usage
     command: df -h
     register: disk 
-  - name: check memory usage 
-    command: free -h 
-    register: memory
   - name: check uptime 
     command: uptime 
     register: uptime
@@ -17,9 +14,6 @@
   - name: display disk usage
     debug:
       var: disk.stdout
-  - name: display memory usage
-    debug:
-      var: memory.stdout
   - name: display uptime
     debug:
       var: uptime.stdout
